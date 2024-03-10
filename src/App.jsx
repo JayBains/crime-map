@@ -1,10 +1,6 @@
 import { Loader } from "@googlemaps/js-api-loader";
 import "./App.css";
 
-fetch(
-  "https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2017-01"
-);
-
 function App() {
   const loader = new Loader({
     apiKey: "AIzaSyAYLht8MaDW0FVJBZDzeW3g5omFslOBDes",

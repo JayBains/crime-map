@@ -1,6 +1,13 @@
 import { Loader } from "@googlemaps/js-api-loader";
 import "./App.css";
 
+fetch(
+  "https://data.police.uk/api/crimes-at-location?lat=51.513103&lng=-0.124563"
+)
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .then((error) => console.log(error));
+
 function App() {
   const loader = new Loader({
     apiKey: "AIzaSyAYLht8MaDW0FVJBZDzeW3g5omFslOBDes",

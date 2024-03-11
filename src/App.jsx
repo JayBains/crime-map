@@ -99,6 +99,7 @@ function App() {
           stylers: [{ color: "#17263c" }],
         },
       ],
+      mapTypeId: "terrain",
     });
 
     var heatmap = new google.maps.visualization.HeatmapLayer({

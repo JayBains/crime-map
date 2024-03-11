@@ -5,12 +5,18 @@ function App() {
   const loader = new Loader({
     apiKey: "AIzaSyAYLht8MaDW0FVJBZDzeW3g5omFslOBDes",
     version: "weekly",
+    libraries: ["visualization"],
   });
+
+  var heatmapData = [
+    new google.maps.LatLng(51.509865, -0.118092),
+    new google.maps.LatLng(51.509865, -0.118094),
+  ];
 
   loader.load().then(async () => {
     const { Map } = await google.maps.importLibrary("maps");
 
-    new Map(document.getElementById("map"), {
+    const map = new Map(document.getElementById("map"), {
       center: { lat: 51.509865, lng: -0.118092 },
       zoom: 11,
       styles: [
@@ -94,6 +100,11 @@ function App() {
         },
       ],
     });
+
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+      data: heatmapData,
+    });
+    heatmap.setMap(map);
   });
 
   return <div id="map"></div>;

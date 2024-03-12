@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   const loader = new Loader({
-    apiKey: "AIzaSyAYLht8MaDW0FVJBZDzeW3g5omFslOBDes",
+    apiKey: import.meta.env.VITE_GMAPS_KEY,
     version: "weekly",
   });
 
@@ -14,7 +14,7 @@ function App() {
       const { HeatmapLayer } = await google.maps.importLibrary("visualization");
 
       fetch(
-        "https://data.police.uk/api/crimes-street/all-crime?lat=51.509865&lng=-0.118092&date=2024-01"
+        "https://data.police.uk/api/crimes-street/fined?lat=51.114541870298986&lng=-0.18683939137449873&date=2024-01"
       )
         .then((response) => response.json())
         .then((data) => {

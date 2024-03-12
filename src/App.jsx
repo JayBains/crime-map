@@ -28,8 +28,8 @@ function App() {
     } */
 
     var heatmapData = [
-      new google.maps.LatLng(51.509865, -0.118092),
-      new google.maps.LatLng(51.509865, -0.118094),
+      new google.maps.LatLng(51.501, -0.114),
+      new google.maps.LatLng(51.509, -0.119),
     ];
 
     const map = new Map(document.getElementById("map"), {

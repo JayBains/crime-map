@@ -1,13 +1,6 @@
 import { Loader } from "@googlemaps/js-api-loader";
 import "./App.css";
 
-fetch(
-  "https://data.police.uk/api/crimes-at-location?lat=51.513103&lng=-0.124563"
-)
-  .then((response) => response.json())
-  .then((data) => console.log(data))
-  .then((error) => console.log(error));
-
 function App() {
   const loader = new Loader({
     apiKey: "AIzaSyAYLht8MaDW0FVJBZDzeW3g5omFslOBDes",
@@ -17,6 +10,22 @@ function App() {
   loader.load().then(async () => {
     const { Map } = await google.maps.importLibrary("maps");
     const { HeatmapLayer } = await google.maps.importLibrary("visualization");
+    let coordinates;
+
+    /*     try{ 
+      fetch(
+      "https://data.police.uk/api/crimes-at-location?lat=51.513103&lng=-0.124563"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        coordinates = data.map((item) => ({
+          latitude: item.location.latitude,
+          longitude: item.location.longitude,
+        }));
+        var heatmapData = [coordinates];
+      })
+      .catch((error) => console.error(error));
+    } */
 
     var heatmapData = [
       new google.maps.LatLng(51.509865, -0.118092),

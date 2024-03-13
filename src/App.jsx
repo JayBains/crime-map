@@ -14,7 +14,7 @@ function App() {
       const { HeatmapLayer } = await google.maps.importLibrary("visualization");
 
       fetch(
-        "https://data.police.uk/api/crimes-street/fined?lat=51.114541870298986&lng=-0.18683939137449873&date=2024-01"
+        "https://data.police.uk/api/crimes-street/all-crimes?lat=51.5008268&lng=-0.1402661&date=2024-01"
       )
         .then((response) => response.json())
         .then((data) => {
